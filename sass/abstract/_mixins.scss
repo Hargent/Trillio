@@ -1,0 +1,58 @@
+@mixin clearfix {
+    &::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+
+@mixin card-gradient($light, $dark) {
+    background: linear-Gradient(to bottom right, $light, $dark);
+}
+
+@mixin center-align() {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+//media query manager
+
+/*$break point argument choices
+- phone
+- portrait
+- landscape 
+- big-desktop
+
+0=>600px: phone 
+600=>900px:Tablet portrait 
+900=>1200px:Tablet landscape 
+1200=>1800px: desktop 
+1800px => +: big desktop
+ORDER: Base ==> Typography ==> General layout 
+==>grid ==> page layout ==> component
+*/
+
+@mixin respond($break-point) {
+    @if $break-point==phone {
+        @media only screen and (max-width: 37.5em) {
+            @content;
+        }
+    }
+    @if $break-point==portrait {
+        @media only screen and (max-width: 56.25em) {
+            @content;
+        }
+    }
+    @if $break-point==landscape {
+        @media only screen and (max-width: 75em) {
+            @content;
+        }
+    }
+    @if $break-point==big-desktop {
+        @media only screen and (min-width: 112.5em) {
+            @content;
+        }
+    }
+}

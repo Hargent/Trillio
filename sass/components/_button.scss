@@ -1,0 +1,79 @@
+// //////////////////////////////////////////////////
+//BUTTON INLINE
+.btn__inline {
+    background: transparent;
+    border: none;
+    color: var(--primary-color);
+    font-size: inherit;
+    border-bottom: 1px solid currentColor;
+    padding-bottom: 2px;
+    display: inline-block;
+    cursor: pointer;
+    transition: all 0.4s;
+    & span {
+        margin-left: 0.1875rem;
+        transition: margin-left 0.2s;
+    }
+    &:hover {
+        color: var(--grey-dark-1);
+        span {
+            margin-left: 0.5rem;
+        }
+    }
+    &:focus {
+        outline: none;
+        animation: pulsate 1s infinite;
+    }
+}
+
+.btn {
+    border: none;
+    border-radius: 50rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.4s;
+    overflow: hidden;
+    padding: 1.25rem 4rem;
+    cursor: pointer;
+    width: 30%;
+    font-weight: 300;
+    text-transform: uppercase;
+    font-size: 1rem;
+    color: #fff;
+    // @media only screen and (max-width: $breakpoint-4) {
+    //     width: 50%;
+    // }
+    background-image: linear-gradient( to right, var(--primary-light), var(--primary-dark));
+    &:hover {
+        // width: 40%;
+        background-image: linear-gradient( to right, var(--primary-dark), var(--primary-light));
+    }
+    &__text-1 {
+        position: relative;
+        transition: transform 0.4s;
+        transform: translateY(-3.5rem);
+        @media only screen and (max-width: $breakpoint-4) {
+            transform: translateY(-5.5rem);
+        }
+    }
+    &__text-2 {
+        transition: transform 0.4s;
+        position: absolute;
+        transform: translateY(0);
+        margin: auto;
+    }
+    .btn:hover &__text-2 {
+        position: relative;
+        transform: translateY(3.5rem);
+    }
+    .btn:hover &__text-1 {
+        position: absolute;
+        transform: translateY(0);
+    }
+    &:focus {
+        outline: none;
+        animation: pulsate 1s infinite;
+    }
+}

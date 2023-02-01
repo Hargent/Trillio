@@ -1,0 +1,14 @@
+/*$break point argument choices
+- phone
+- portrait
+- landscape 
+- big-desktop
+
+0=>600px: phone 
+600=>900px:Tablet portrait 
+900=>1200px:Tablet landscape 
+1200=>1800px: desktop 
+1800px => +: big desktop
+ORDER: Base ==> Typography ==> General layout 
+==>grid ==> page layout ==> component
+*//*# sourceMappingURL=main.css.map */

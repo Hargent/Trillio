@@ -1,0 +1,43 @@
+// //////////////////////////////////////////////////
+// //////////////////////////////////////////////////
+//LIST
+.list {
+    list-style: none;
+    margin: 1.875rem 0;
+    padding: 1.875rem 0;
+    border-top: var(--border);
+    border-bottom: var(--border);
+    //
+    display: flex;
+    flex-wrap: wrap;
+    &__item {
+        flex: 0 0 50%;
+        margin-bottom: 0.5rem;
+        &::before {
+            content: "";
+            display: inline-block;
+            height: 0.625rem;
+            width: 0.625rem;
+            margin-right: 0.5rem;
+            //Older browsers
+            background: {
+                image: url(../img/chevron-thin-right.svg);
+                size: cover;
+            }
+            // Newer Browsers, Use MASKS
+            @supports ( ( -webkit-mask-image: url(../img/chevron-thin-right.svg) or (mask-image : url(../img/chevron-thin-right.svg)))) {
+                height: 0.625rem;
+                width: 0.625rem;
+                background-color: var(--primary-light);
+                -webkit-mask: {
+                    image: url(../img/chevron-thin-right.svg);
+                    size: cover;
+                }
+                mask: {
+                    image: url(../img/chevron-thin-right.svg);
+                    size: cover;
+                }
+            }
+        }
+    }
+}
